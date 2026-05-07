@@ -9,8 +9,7 @@
 - Role: Independent SBL and Digital Asset Lending Specialist
 - Publication: The Liquidity Desk
 - Site: https://sydneywestrick.com
-- Newsletter (SBL): https://theliquiditydesk.substack.com
-- Newsletter (DAL): https://digitalcollateralbrief.substack.com
+- Newsletter: https://theliquiditydesk.substack.com
 - LinkedIn: https://www.linkedin.com/in/sydney-westrick
 - X: https://x.com/SydneyWestFin
 - Education: Birmingham-Southern College (BA, International Studies and Finance)

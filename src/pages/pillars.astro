@@ -34,21 +34,19 @@ const breadcrumb = {
   <section class="pillars-hero">
     <div class="container">
       <div class="eyebrow" style="margin-bottom: 16px;">Reference Library</div>
-      <h1>The Pillars<em>twenty foundations, eight extensions</em></h1>
-      <p class="desc">Every dimension of securities-backed and digital asset-backed lending, organized as a connected reference graph. Each pillar is a 3,500-word practitioner-grade reference. New pillars publish weekly through Year 1.</p>
+      <h1>The Pillars<em>twenty foundations</em></h1>
+      <p class="desc">Every dimension of securities-backed lending, organized as a connected reference graph. Each pillar is a practitioner-grade reference for wealth advisors. New pillars publish weekly through Year 1.</p>
     </div>
   </section>
 
   <section class="container">
     <div class="filter-bar">
       <span class="filter-label">Filter</span>
-      <button class="filter-pill active">All Topics</button>
-      <button class="filter-pill">SBL · 20</button>
-      <button class="filter-pill">DAL · 8</button>
-      <button class="filter-pill">Foundations</button>
-      <button class="filter-pill">Audience</button>
-      <button class="filter-pill">Mechanics</button>
-      <button class="filter-pill">Risk & Compliance</button>
+      <button class="filter-pill active" data-filter="all">All Topics</button>
+      <button class="filter-pill" data-filter="foundations">Foundations</button>
+      <button class="filter-pill" data-filter="audience">Audience</button>
+      <button class="filter-pill" data-filter="mechanics">Mechanics</button>
+      <button class="filter-pill" data-filter="risk">Risk & Compliance</button>
     </div>
 
     <div style="margin-bottom: 24px;">
@@ -56,181 +54,145 @@ const breadcrumb = {
       <p style="color: var(--sage); font-size: 14px;">20 pillars · publishing weekly through Q4 2026</p>
     </div>
     <div class="pillar-grid">
-      <a href="/securities-backed-lending/what-is-securities-backed-lending/" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="/securities-backed-lending/what-is-securities-backed-lending/" class="pillar-card" data-cats="foundations" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 01</div>
         <div class="pillar-cat">SBL</div>
         <h3>What Is Securities-Backed Lending</h3>
         <div class="pillar-desc">A foundation reference for wealth advisors. Definitions, mechanics, the regulatory frame.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="foundations mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 02</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL vs Margin Loan</h3>
         <div class="pillar-desc">Regulation T, non-purpose lending, LTV ceilings, and when each applies.</div>
       </a>
-      <a href="/securities-backed-lending/sbl-for-concentrated-stock/" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="/securities-backed-lending/sbl-for-concentrated-stock/" class="pillar-card" data-cats="audience" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 03</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL for Concentrated Stock</h3>
         <div class="pillar-desc">How to solve concentrated equity without forcing a tax-event sale.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="audience" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 04</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL for Founders Pre-IPO</h3>
         <div class="pillar-desc">Liquidity for founders during the lockup window.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="risk" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 05</div>
         <div class="pillar-cat">SBL</div>
         <h3>Tax Treatment of SBL</h3>
         <div class="pillar-desc">Interest deductibility, basis preservation, and the wash sale rule.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="risk mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 06</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL Margin Calls</h3>
         <div class="pillar-desc">How they work, how to cure, and how to design loan structures that minimize call risk.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="audience" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 07</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL for Trust Structures</h3>
         <div class="pillar-desc">GRATs, ILITs, and dynasty trusts as borrowers.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="audience" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 08</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL for Family Offices</h3>
         <div class="pillar-desc">Allocation models, custodian selection, and policy frameworks.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="audience" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 09</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL for Founders Post-IPO</h3>
         <div class="pillar-desc">Liquidity strategies after the lockup expires.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 10</div>
         <div class="pillar-cat">SBL</div>
         <h3>LTV Mechanics</h3>
         <div class="pillar-desc">Diversified vs concentrated collateral, daily mark, advance ratios.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 11</div>
         <div class="pillar-cat">SBL</div>
         <h3>Custodian Selection</h3>
         <div class="pillar-desc">Schwab, Fidelity, Goldman, Morgan Stanley — strengths and weaknesses.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="risk" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 12</div>
         <div class="pillar-cat">SBL</div>
         <h3>When SBL Goes Wrong</h3>
         <div class="pillar-desc">Case studies. The Tilson, the COVID crash, the failed cure window.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 13</div>
         <div class="pillar-cat">SBL</div>
         <h3>Rate Mechanics</h3>
         <div class="pillar-desc">SOFR spread, pricing tiers, negotiation room.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="risk" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 14</div>
         <div class="pillar-cat">SBL</div>
         <h3>Restricted Stock and Rule 144</h3>
         <div class="pillar-desc">How SBL handles restricted positions during the holding period.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 15</div>
         <div class="pillar-cat">SBL</div>
         <h3>Cross-Collateralization</h3>
         <div class="pillar-desc">Pooling collateral across accounts and entities.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="foundations" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 16</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL vs PLOC vs HELOC</h3>
         <div class="pillar-desc">Comparison framework for advisors building liquidity stacks.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="audience" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 17</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL in Estate Planning</h3>
         <div class="pillar-desc">GRAT zeros, basis step-up, and the loan-as-substitute strategy.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="risk" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 18</div>
         <div class="pillar-cat">SBL</div>
         <h3>FINRA Disclosure Requirements</h3>
         <div class="pillar-desc">What advisors must disclose, when, and to whom.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="foundations" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 19</div>
         <div class="pillar-cat">SBL</div>
         <h3>From SBL to Digital Asset Lending</h3>
         <div class="pillar-desc">The bridge pillar. Why audiences for both overlap.</div>
       </a>
-      <a href="#" class="pillar-card" style="text-decoration: none; color: inherit;">
+      <a href="#" class="pillar-card" data-cats="foundations mechanics" style="text-decoration: none; color: inherit;">
         <div class="pillar-num">Pillar 20</div>
         <div class="pillar-cat">SBL</div>
         <h3>SBL Strategy Framework</h3>
         <div class="pillar-desc">The capstone. A framework for evaluating SBL across client situations.</div>
       </a>
     </div>
-
-    <div style="margin: 64px 0 24px; padding-top: 48px; border-top: 1px solid var(--line);">
-      <div class="eyebrow" style="color: var(--gold); margin-bottom: 4px;">Digital Asset-Backed Lending</div>
-      <p style="color: var(--sage); font-size: 14px;">8 pillars · activates Year 2 (Month 18, October 2027)</p>
-    </div>
-    <div class="pillar-grid">
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 01</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>Digital Asset-Backed Lending: Wealth Advisor Guide</h3>
-        <div class="pillar-desc">Bitcoin and Ethereum as collateral. The institutional landscape.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 02</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>Crypto Lending Platforms Compared</h3>
-        <div class="pillar-desc">Coinbase Prime, Ledn, Unchained, Strike, Arch, Cantor.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 03</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>Bitcoin LTV Mechanics</h3>
-        <div class="pillar-desc">Volatility-adjusted LTV. The 50% default and when to deviate.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 04</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>Tax Treatment of Crypto-Backed Loans</h3>
-        <div class="pillar-desc">Why crypto loans are not crypto sales. IRS guidance.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 05</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>Family Office Allocation to DAL</h3>
-        <div class="pillar-desc">Position sizing and policy frameworks.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 06</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>GENIUS Act and CLARITY Act</h3>
-        <div class="pillar-desc">What the new regulatory frame means for HNW lending.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 07</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>Stablecoin-Backed Lending</h3>
-        <div class="pillar-desc">USDC, USDT, and the lower-volatility lending case.</div>
-      </div>
-      <div class="pillar-card" style="opacity: 0.6;">
-        <div class="pillar-num">Pillar 08</div>
-        <div class="pillar-cat dal">DAL · Activates Year 2</div>
-        <h3>When Crypto Lending Goes Wrong</h3>
-        <div class="pillar-desc">Celsius, BlockFi, and the lessons for HNW borrowers.</div>
-      </div>
-    </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      const pills = document.querySelectorAll('.filter-pill');
+      const cards = document.querySelectorAll('.pillar-card');
+      pills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          pills.forEach((p) => p.classList.remove('active'));
+          pill.classList.add('active');
+          const filter = pill.getAttribute('data-filter');
+          cards.forEach((card) => {
+            const cats = (card.getAttribute('data-cats') || '').split(/\s+/);
+            const show = filter === 'all' || cats.includes(filter);
+            card.style.display = show ? '' : 'none';
+          });
+        });
+      });
+    })();
+  </script>
 </BaseLayout>
