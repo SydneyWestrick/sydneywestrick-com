@@ -1,6 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// Pull the 5 most recent posts from Sydney's Substack at build time.
+// Vercel rebuilds on every git push and via the Deploy Hook (cron).
+type Post = { title: string; link: string; date: string };
+let recentPosts: Post[] = [];
+try {
+  const res = await fetch('https://theliqdesk.substack.com/feed', {
+    headers: { 'User-Agent': 'sydneywestrick.com build' }
+  });
+  if (res.ok) {
+    const xml = await res.text();
+    const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+    recentPosts = items.slice(0, 5).map((item) => {
+      const pick = (tag: string) => {
+        const m = item.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`));
+        if (!m) return '';
+        return m[1].replace(/^<!\[CDATA\[/, '').replace(/\]\]>$/, '').trim();
+      };
+      const rawDate = pick('pubDate');
+      const d = rawDate ? new Date(rawDate) : null;
+      const date = d
+        ? d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        : '';
+      return { title: pick('title'), link: pick('link'), date };
+    });
+  }
+} catch (err) {
+  console.warn('[index.astro] Substack feed fetch failed:', err);
+}
+
 const webPage = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -81,31 +110,21 @@ const breadcrumb = {
     </div>
 
     <div class="work-list">
-      <a href="/securities-backed-lending/sbl-for-concentrated-stock/" class="work-item" style="text-decoration: none; color: inherit;">
-        <div class="work-date">May 7, 2026</div>
-        <div class="work-title">SBL for Concentrated Stock: A Practitioner's Guide</div>
-        <div class="work-cat">Pillar · SBL</div>
-      </a>
-      <a href="/reports" class="work-item" style="text-decoration: none; color: inherit;">
-        <div class="work-date">Apr 30, 2026</div>
-        <div class="work-title">Q1 2026 SBL Market Snapshot</div>
-        <div class="work-cat">Report</div>
-      </a>
-      <a href="/pillars" class="work-item" style="text-decoration: none; color: inherit;">
-        <div class="work-date">Apr 22, 2026</div>
-        <div class="work-title">SBL vs Margin Loan: The Regulatory Frame</div>
-        <div class="work-cat">Pillar · SBL</div>
-      </a>
-      <a href="/securities-backed-lending/what-is-securities-backed-lending/" class="work-item" style="text-decoration: none; color: inherit;">
-        <div class="work-date">Apr 9, 2026</div>
-        <div class="work-title">What Is Securities-Backed Lending, Really?</div>
-        <div class="work-cat">Pillar · SBL</div>
-      </a>
-      <a href="/pillars" class="work-item" style="text-decoration: none; color: inherit;">
-        <div class="work-date">Apr 8, 2026</div>
-        <div class="work-title">SBL for Trust Structures: GRATs, ILITs, and Dynasty Trusts</div>
-        <div class="work-cat">Pillar · SBL</div>
-      </a>
+      {recentPosts.length > 0 ? (
+        recentPosts.map((post) => (
+          <a href={post.link} target="_blank" rel="noopener" class="work-item" style="text-decoration: none; color: inherit;">
+            <div class="work-date">{post.date}</div>
+            <div class="work-title">{post.title}</div>
+            <div class="work-cat">The Liquidity Desk</div>
+          </a>
+        ))
+      ) : (
+        <a href="https://theliqdesk.substack.com" target="_blank" rel="noopener" class="work-item" style="text-decoration: none; color: inherit;">
+          <div class="work-date">Latest</div>
+          <div class="work-title">Read the latest at The Liquidity Desk</div>
+          <div class="work-cat">Substack</div>
+        </a>
+      )}
     </div>
   </section>
 </BaseLayout>
