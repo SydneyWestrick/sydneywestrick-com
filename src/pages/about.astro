@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const profilePage = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://sydneywestrick.com/about/#profilepage",
+  "url": "https://sydneywestrick.com/about/",
+  "name": "About Sydney Westrick",
+  "mainEntity": { "@id": "https://sydneywestrick.com/#person" },
+  "dateCreated": "2026-04-01",
+  "dateModified": "2026-05-07",
+  "isPartOf": { "@id": "https://sydneywestrick.com/#website" }
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneywestrick.com" },
+    { "@type": "ListItem", "position": 2, "name": "About" }
+  ]
+};
+---
+<BaseLayout
+  title="About · Sydney Westrick"
+  description="Independent specialist on securities-backed and digital asset-backed lending for HNW and UHNW wealth."
+  activeNav="about"
+>
+  <Fragment slot="page-schema">
+    <script type="application/ld+json" set:html={JSON.stringify(profilePage)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <section class="about-hero">
+    <div class="container">
+      <div class="eyebrow" style="margin-bottom: 16px;">About</div>
+      <h1>An independent practitioner voice<br><em>built for one specialized category at a time</em></h1>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="about-grid">
+      <div class="about-bio">
+        <p>Sydney Westrick is an independent specialist on securities-backed and digital asset-backed lending for HNW and UHNW wealth. Through The Liquidity Desk newsletter and a published library of practitioner-grade reference content, she serves wealth advisors, family office decision-makers, RIAs, and estate attorneys building liquidity strategies for their clients.</p>
+        <p>Her background spans institutional market intelligence at Dataminr, healthcare private equity analysis, and securities-backed lending business development. She holds a BA in International Studies and Finance from Birmingham-Southern College, an SIE certification, and is pursuing the Series 65 independently.</p>
+        <p>The Liquidity Desk publishes original quarterly market data through the SBL Market Snapshot survey, an annual SBL Industry Report, and (beginning Year 2) the DAL Industry Pulse covering institutional digital asset lending. Sydney's pillar content has been cited by wealth management trade publications and discussed in family office forums including TIGER 21.</p>
+        <p>She is based in Madison, Wisconsin.</p>
+      </div>
+      <div class="about-meta">
+        <div class="about-meta-row"><div class="about-meta-label">Practice</div><div class="about-meta-value">SBL · DAL</div></div>
+        <div class="about-meta-row"><div class="about-meta-label">Audience</div><div class="about-meta-value">HNW · UHNW</div></div>
+        <div class="about-meta-row"><div class="about-meta-label">Education</div><div class="about-meta-value">Birmingham-Southern College</div></div>
+        <div class="about-meta-row"><div class="about-meta-label">Licenses</div><div class="about-meta-value">SIE · Series 65 (in progress)</div></div>
+        <div class="about-meta-row"><div class="about-meta-label">Newsletter</div><div class="about-meta-value">The Liquidity Desk</div></div>
+        <div class="about-meta-row"><div class="about-meta-label">Location</div><div class="about-meta-value">Madison, WI</div></div>
+      </div>
+    </div>
+
+    <div class="bio-variants">
+      <h2>Bio variants</h2>
+      <p style="color: var(--sage); font-size: 14px; margin-bottom: 24px;">For press, speaking introductions, and conference programs. Copy whichever length fits the context.</p>
+
+      <div class="bio-variant">
+        <div class="bio-label"><span>One Line</span><span>20 words</span></div>
+        <div class="bio-text">Sydney Westrick is an independent practitioner voice on securities-backed and digital asset-backed lending for HNW and UHNW wealth.</div>
+      </div>
+
+      <div class="bio-variant">
+        <div class="bio-label"><span>Short Bio</span><span>60 words</span></div>
+        <div class="bio-text">Sydney Westrick is an independent specialist on securities-backed and digital asset-backed lending for HNW and UHNW wealth. Through The Liquidity Desk newsletter and a published library of pillar content, she serves wealth advisors, family offices, and RIAs. Her background spans institutional market intelligence at Dataminr, healthcare PE analysis, and SBL business development.</div>
+      </div>
+
+      <div class="bio-variant">
+        <div class="bio-label"><span>Long Bio</span><span>120 words</span></div>
+        <div class="bio-text long">Sydney Westrick is an independent specialist on securities-backed and digital asset-backed lending for HNW and UHNW wealth. Through The Liquidity Desk newsletter and a published library of pillar content, she serves wealth advisors, family office decision-makers, RIAs, and estate attorneys building liquidity strategies for their clients. Her background spans institutional market intelligence at Dataminr, healthcare private equity analysis, and securities-backed lending business development. She holds a BA in International Studies and Finance from Birmingham-Southern College, an SIE certification, and is pursuing the Series 65 independently. The Liquidity Desk publishes the quarterly SBL Market Snapshot, an annual SBL Industry Report, and (beginning Year 2) the DAL Industry Pulse covering institutional digital asset lending. She is based in Madison, Wisconsin.</div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

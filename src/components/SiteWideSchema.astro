@@ -1,0 +1,61 @@
+---
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://sydneywestrick.com/#person",
+      "name": "Sydney Westrick",
+      "url": "https://sydneywestrick.com",
+      "image": "https://sydneywestrick.com/headshot.jpg",
+      "description": "Independent practitioner voice on securities-backed and digital asset-backed lending for HNW and UHNW wealth.",
+      "jobTitle": "Independent SBL & Digital Asset Lending Specialist",
+      "knowsAbout": [
+        "Securities-Backed Lending",
+        "Digital Asset-Backed Lending",
+        "Concentrated Stock Solutions",
+        "Family Office Liquidity Strategy",
+        "Bitcoin-Backed Lending",
+        "Wealth Management",
+        "Private Credit",
+        "SBL Tax Treatment",
+        "SBL for Trust Structures",
+        "Margin Loan Alternatives"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Birmingham-Southern College"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/sydneywestrick",
+        "https://x.com/SydneyWestFin",
+        "https://theliquiditydesk.substack.com"
+      ],
+      "worksFor": { "@id": "https://sydneywestrick.com/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sydneywestrick.com/#org",
+      "name": "The Liquidity Desk",
+      "url": "https://sydneywestrick.com",
+      "logo": "https://sydneywestrick.com/logo.png",
+      "founder": { "@id": "https://sydneywestrick.com/#person" },
+      "description": "Independent research and practitioner commentary on securities-backed lending and digital asset-backed lending for HNW/UHNW wealth advisors, family offices, and RIAs.",
+      "sameAs": [
+        "https://theliquiditydesk.substack.com",
+        "https://linkedin.com/in/sydneywestrick"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sydneywestrick.com/#website",
+      "url": "https://sydneywestrick.com",
+      "name": "Sydney Westrick · The Liquidity Desk",
+      "description": "Practitioner reference on SBL and digital asset-backed lending for HNW and UHNW wealth.",
+      "publisher": { "@id": "https://sydneywestrick.com/#org" },
+      "inLanguage": "en-US"
+    }
+  ]
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(graph)} />

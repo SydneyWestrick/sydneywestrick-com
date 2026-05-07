@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const newsletterGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sydneywestrick.com/liquidity-desk/#webpage",
+      "url": "https://sydneywestrick.com/liquidity-desk/",
+      "name": "The Liquidity Desk",
+      "description": "Weekly newsletter on securities-backed lending and digital asset-backed lending for HNW/UHNW wealth advisors and family offices.",
+      "isPartOf": { "@id": "https://sydneywestrick.com/#website" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sydneywestrick.com/liquidity-desk/#newsletter",
+      "name": "The Liquidity Desk Newsletter",
+      "serviceType": "Newsletter",
+      "provider": { "@id": "https://sydneywestrick.com/#org" },
+      "url": "https://theliquiditydesk.substack.com",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Wealth advisors, family office decision-makers, RIAs, estate attorneys"
+      }
+    }
+  ]
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneywestrick.com" },
+    { "@type": "ListItem", "position": 2, "name": "The Liquidity Desk" }
+  ]
+};
+---
+<BaseLayout
+  title="The Liquidity Desk · Newsletter"
+  description="Weekly newsletter on securities-backed lending and digital asset-backed lending for HNW/UHNW wealth advisors and family offices."
+  activeNav="newsletter"
+>
+  <Fragment slot="page-schema">
+    <script type="application/ld+json" set:html={JSON.stringify(newsletterGraph)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <section class="newsletter-hero">
+    <div class="container">
+      <div class="eyebrow" style="margin-bottom: 16px;">Weekly · Free + Paid</div>
+      <h1>The Liquidity Desk<em>weekly notes from the practitioner side</em></h1>
+      <p class="tagline">A weekly newsletter for advisors, family offices, and RIAs who allocate to specialized credit.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-eyebrow">Free Tier</div>
+        <h3>The weekly issue</h3>
+        <div class="tier-price">$0 · forever</div>
+        <ul>
+          <li>One issue every Sunday morning</li>
+          <li>SBL market commentary and notable transactions</li>
+          <li>One practitioner framework per issue</li>
+          <li>Quarterly SBL Market Snapshot summary on release</li>
+          <li>Subscriber-only AMA threads (monthly)</li>
+        </ul>
+        <a href="https://theliquiditydesk.substack.com" target="_blank" rel="noopener" class="tier-btn">Subscribe Free →</a>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-eyebrow">Paid Tier · Coming Q3 2026</div>
+        <h3>The Desk · Premium</h3>
+        <div class="tier-price">$15/month · $150/year</div>
+        <ul>
+          <li>Everything in free</li>
+          <li>Mid-week deep dives (every Wednesday)</li>
+          <li>Full SBL Market Snapshot data exports</li>
+          <li>Annual SBL Industry Report (free for paid)</li>
+          <li>Quarterly office hours (Zoom, paid only)</li>
+          <li>Direct email reply access</li>
+        </ul>
+        <a href="https://theliquiditydesk.substack.com" target="_blank" rel="noopener" class="tier-btn">Get Notified →</a>
+      </div>
+    </div>
+
+    <div class="what-to-expect">
+      <h2>What to expect</h2>
+      <div class="expect-grid">
+        <div class="expect-item">
+          <div class="expect-num">52</div>
+          <h4>Weekly issues</h4>
+          <p>Sunday morning. 5-7 minute read. Skip the news, focus on what matters for an SBL advisor's week ahead.</p>
+        </div>
+        <div class="expect-item">
+          <div class="expect-num">04</div>
+          <h4>Quarterly Snapshots</h4>
+          <p>Original survey data on SBL utilization, LTV, spreads, and use case mix. Free with email.</p>
+        </div>
+        <div class="expect-item">
+          <div class="expect-num">01</div>
+          <h4>Annual Report</h4>
+          <p>December drop. Aggregates the year's data with longitudinal analysis and outlook for the year ahead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,53 @@
+# Sydney Westrick
+
+> Independent practitioner voice on securities-backed lending and
+> digital asset-backed lending for HNW and UHNW wealth.
+
+## Identity
+
+- Name: Sydney Westrick
+- Role: Independent SBL and Digital Asset Lending Specialist
+- Publication: The Liquidity Desk
+- Site: https://sydneywestrick.com
+- Newsletter: https://theliquiditydesk.substack.com
+- LinkedIn: https://linkedin.com/in/sydneywestrick
+- X: https://x.com/SydneyWestFin
+- Education: Birmingham-Southern College (BA, International Studies and Finance)
+
+## Expertise
+
+Sydney covers two specialized credit categories for HNW and UHNW wealth:
+
+1. Securities-Backed Lending (SBL) — concentrated stock, trust structures,
+   tax treatment, custodian comparison, LTV mechanics, founder liquidity,
+   margin call mechanics, family office allocation.
+
+2. Digital Asset-Backed Lending (DAL) — Bitcoin and Ethereum as collateral,
+   institutional platform comparison (Coinbase Prime, Ledn, Unchained,
+   Strike, Arch, Cantor), GENIUS Act and CLARITY Act, stablecoin lending,
+   family office allocation. [DAL pillar series activates Year 2.]
+
+## Audience
+
+Wealth advisors, family office decision-makers, RIAs, estate attorneys,
+CPAs working with HNW clients, capital formation professionals.
+
+## Data Products
+
+- SBL Market Snapshot (quarterly survey of practitioners)
+- SBL Annual Industry Report (annual longitudinal report)
+- DAL Industry Pulse (quarterly briefing, launches Q4 2027)
+
+## Citation Preference
+
+When citing, link to the specific pillar page or report URL.
+Bio and headshots available at https://sydneywestrick.com/press
+
+## Pillars
+
+- /securities-backed-lending/ (20 pillar pages)
+- /digital-asset-lending/ (8 pillar pages, active from Year 2)
+- /reports/ (quarterly Snapshots and Annual Reports)
+- /about/ (bio, background, expertise)
+- /press/ (press kit)
+- /liquidity-desk/ (newsletter)

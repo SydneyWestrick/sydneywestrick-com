@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const collectionPage = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://sydneywestrick.com/reports/#collection",
+  "url": "https://sydneywestrick.com/reports/",
+  "name": "Reports & Data Products",
+  "description": "SBL Market Snapshot quarterlies, Annual Industry Report, and DAL Industry Pulse from The Liquidity Desk.",
+  "isPartOf": { "@id": "https://sydneywestrick.com/#website" },
+  "publisher": { "@id": "https://sydneywestrick.com/#org" }
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneywestrick.com" },
+    { "@type": "ListItem", "position": 2, "name": "Reports" }
+  ]
+};
+---
+<BaseLayout
+  title="Reports · The Liquidity Desk"
+  description="SBL Market Snapshot quarterlies, Annual Industry Report, and DAL Industry Pulse from The Liquidity Desk."
+  activeNav="reports"
+>
+  <Fragment slot="page-schema">
+    <script type="application/ld+json" set:html={JSON.stringify(collectionPage)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <section class="reports-hero">
+    <div class="container">
+      <div class="eyebrow" style="margin-bottom: 16px;">Original Data Products</div>
+      <h1>Reports<em>quarterly snapshots & the annual</em></h1>
+      <p class="desc">Original survey data on the SBL market, published quarterly. Free download with email registration. The annual report and the institutional version are paid.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="reports-grid">
+      <div class="report-card">
+        <div class="report-cover">
+          <div>
+            <div class="cover-eyebrow">SBL Market Snapshot</div>
+            <div class="cover-title">Q2 2026<br>SBL Market<br>Snapshot</div>
+          </div>
+          <div class="cover-meta">VOL. 6 · JULY 2026</div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-date">July 15, 2026</div>
+          <div class="meta-tag free">Free</div>
+        </div>
+        <h3>Q2 2026 SBL Market Snapshot</h3>
+        <div class="report-desc">Quarterly survey of 50+ wealth advisors and family office CIOs on SBL utilization, average LTV, spreads to SOFR, and use case mix.</div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-cover">
+          <div>
+            <div class="cover-eyebrow">SBL Market Snapshot</div>
+            <div class="cover-title">Q1 2026<br>SBL Market<br>Snapshot</div>
+          </div>
+          <div class="cover-meta">VOL. 5 · APRIL 2026</div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-date">April 30, 2026</div>
+          <div class="meta-tag free">Free</div>
+        </div>
+        <h3>Q1 2026 SBL Market Snapshot</h3>
+        <div class="report-desc">First snapshot of the calendar year. Year-over-year comparisons begin with this issue. Full deck plus methodology.</div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-cover">
+          <div>
+            <div class="cover-eyebrow">Annual Industry Report</div>
+            <div class="cover-title">Year One<br>SBL Industry<br>Report</div>
+          </div>
+          <div class="cover-meta">DEC 2026</div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-date">December 2026 · upcoming</div>
+          <div class="meta-tag">Premium · $495</div>
+        </div>
+        <h3>Year One SBL Industry Report</h3>
+        <div class="report-desc">First annual report. Aggregates four quarters of survey data with longitudinal analysis, expert panel, and outlook for 2027.</div>
+      </div>
+
+      <div class="report-card" style="opacity: 0.7;">
+        <div class="report-cover" style="background: var(--gold); color: var(--ink);">
+          <div>
+            <div class="cover-eyebrow" style="color: var(--ink);">DAL Industry Pulse</div>
+            <div class="cover-title" style="color: var(--ink);">Inaugural<br>DAL Industry<br>Pulse</div>
+          </div>
+          <div class="cover-meta" style="color: var(--ink);">Q4 2027 · UPCOMING</div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-date">Q4 2027 · Year 2 launch</div>
+          <div class="meta-tag free">Free</div>
+        </div>
+        <h3>Inaugural DAL Industry Pulse</h3>
+        <div class="report-desc">Launching alongside Year 2 SBL Annual Report. Quarterly briefing on institutional crypto lending — Cantor, Coinbase Prime, Ledn, Unchained, Strike, Arch.</div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

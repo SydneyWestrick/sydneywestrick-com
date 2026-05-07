@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const webPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://sydneywestrick.com/#webpage",
+  "url": "https://sydneywestrick.com",
+  "name": "Sydney Westrick · The Liquidity Desk",
+  "description": "Practitioner reference on SBL and digital asset-backed lending for HNW and UHNW wealth.",
+  "isPartOf": { "@id": "https://sydneywestrick.com/#website" },
+  "about": { "@id": "https://sydneywestrick.com/#person" },
+  "primaryImageOfPage": "https://sydneywestrick.com/headshot.jpg"
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneywestrick.com" }
+  ]
+};
+---
+<BaseLayout
+  title="Sydney Westrick · The Liquidity Desk"
+  description="Independent practitioner voice on securities-backed and digital asset-backed lending for HNW and UHNW wealth."
+  activeNav="home"
+>
+  <Fragment slot="page-schema">
+    <script type="application/ld+json" set:html={JSON.stringify(webPage)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <section class="masthead">
+    <div class="container">
+      <div class="masthead-grid">
+        <div>
+          <div class="eyebrow" style="margin-bottom: 24px;">Independent Practitioner Voice · Est. 2026</div>
+          <h1>Sydney Westrick<em>The Liquidity Desk</em></h1>
+          <p class="lead">Independent practitioner voice on securities-backed lending and digital asset-backed lending for HNW and UHNW wealth. Reference content, original quarterly data, and a weekly newsletter for advisors who allocate to specialized credit.</p>
+          <div style="display: flex; gap: 12px;">
+            <a href="/pillars" style="display: inline-block; padding: 14px 28px; background: var(--rust); color: var(--cream); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Read the Pillars →</a>
+            <a href="/liquidity-desk" style="display: inline-block; padding: 14px 28px; background: transparent; color: var(--ink); border: 1px solid var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Subscribe</a>
+          </div>
+        </div>
+        <div class="headshot"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="cta-cards">
+      <a href="/pillars" class="cta-card" style="text-decoration: none; color: inherit;">
+        <div class="cta-eyebrow">Reference Library</div>
+        <h3>20 SBL pillars · 8 DAL pillars</h3>
+        <p class="desc">Practitioner-grade reference content on every dimension of securities-backed and digital asset-backed lending.</p>
+        <div class="cta-arrow">Browse the library →</div>
+      </a>
+      <a href="/reports" class="cta-card" style="text-decoration: none; color: inherit;">
+        <div class="cta-eyebrow">Latest Data</div>
+        <h3>Q2 2026 SBL Market Snapshot</h3>
+        <p class="desc">Quarterly survey of wealth advisors on SBL utilization, average LTV, spreads to SOFR, and use case mix.</p>
+        <div class="cta-arrow">Read the snapshot →</div>
+      </a>
+      <a href="/press" class="cta-card" style="text-decoration: none; color: inherit;">
+        <div class="cta-eyebrow">For Press</div>
+        <h3>Source on lending markets</h3>
+        <p class="desc">Bio, headshots, topic expertise, and press contact. Quote in 2 hours, full feature in 24.</p>
+        <div class="cta-arrow">Open the press kit →</div>
+      </a>
+    </div>
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Latest Work</div>
+        <h2>Recent published</h2>
+      </div>
+      <a href="/pillars" style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">View all →</a>
+    </div>
+
+    <div class="work-list">
+      <a href="/securities-backed-lending/sbl-for-concentrated-stock/" class="work-item" style="text-decoration: none; color: inherit;">
+        <div class="work-date">May 7, 2026</div>
+        <div class="work-title">SBL for Concentrated Stock: A Practitioner's Guide</div>
+        <div class="work-cat">Pillar · SBL</div>
+      </a>
+      <a href="/reports" class="work-item" style="text-decoration: none; color: inherit;">
+        <div class="work-date">Apr 30, 2026</div>
+        <div class="work-title">Q1 2026 SBL Market Snapshot</div>
+        <div class="work-cat">Report</div>
+      </a>
+      <a href="/pillars" class="work-item" style="text-decoration: none; color: inherit;">
+        <div class="work-date">Apr 22, 2026</div>
+        <div class="work-title">SBL vs Margin Loan: The Regulatory Frame</div>
+        <div class="work-cat">Pillar · SBL</div>
+      </a>
+      <a href="/pillars" class="work-item" style="text-decoration: none; color: inherit;">
+        <div class="work-date">Apr 15, 2026</div>
+        <div class="work-title">What Is Securities-Backed Lending</div>
+        <div class="work-cat">Pillar · SBL</div>
+      </a>
+      <a href="/pillars" class="work-item" style="text-decoration: none; color: inherit;">
+        <div class="work-date">Apr 8, 2026</div>
+        <div class="work-title">SBL for Trust Structures: GRATs, ILITs, and Dynasty Trusts</div>
+        <div class="work-cat">Pillar · SBL</div>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

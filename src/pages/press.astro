@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactPage = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://sydneywestrick.com/press/#contactpage",
+  "url": "https://sydneywestrick.com/press/",
+  "name": "Press & Media",
+  "description": "Press kit, headshots, bios, and contact information for journalists covering wealth, lending, and digital asset markets.",
+  "mainEntity": { "@id": "https://sydneywestrick.com/#person" },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Journalists, financial reporters, podcast producers"
+  },
+  "isPartOf": { "@id": "https://sydneywestrick.com/#website" }
+};
+
+const headshotImage = {
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://sydneywestrick.com/press/headshot-square-2400.jpg",
+  "width": 2400,
+  "height": 2400,
+  "encodingFormat": "image/jpeg",
+  "creator": { "@id": "https://sydneywestrick.com/#person" },
+  "creditText": "Sydney Westrick · The Liquidity Desk",
+  "license": "https://sydneywestrick.com/press/usage-terms/"
+};
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneywestrick.com" },
+    { "@type": "ListItem", "position": 2, "name": "Press" }
+  ]
+};
+---
+<BaseLayout
+  title="Press · Sydney Westrick"
+  description="Press kit, headshots, bios, and contact information for journalists covering wealth, lending, and digital asset markets."
+  activeNav="press"
+>
+  <Fragment slot="page-schema">
+    <script type="application/ld+json" set:html={JSON.stringify(contactPage)} />
+    <script type="application/ld+json" set:html={JSON.stringify(headshotImage)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
+
+  <section class="press-hero">
+    <div class="container">
+      <div class="eyebrow" style="margin-bottom: 16px;">For Journalists</div>
+      <h1>Press<em>built for deadline</em></h1>
+      <p class="desc">Bios, headshots, topic expertise, and direct contact. Quote in 2 hours. Full feature in 24. Background-only is fine.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="press-section">
+      <h2>Headshots</h2>
+      <p style="color: var(--sage); font-size: 14px; margin-bottom: 24px;">Click any to download. Available in square, portrait, landscape, and environmental crops.</p>
+      <div class="headshot-grid">
+        <div class="headshot-thumb">SQUARE 2400</div>
+        <div class="headshot-thumb">PORTRAIT 2400</div>
+        <div class="headshot-thumb">LANDSCAPE 2400</div>
+        <div class="headshot-thumb">ENVIRONMENTAL</div>
+      </div>
+    </div>
+
+    <div class="press-section">
+      <h2>Topic expertise</h2>
+      <p style="color: var(--sage); font-size: 14px; margin-bottom: 24px;">Topics where Sydney can speak credibly to reporters on deadline.</p>
+      <div class="expertise-grid">
+        <div class="expertise-item"><h4>Securities-Backed Lending</h4><p>Mechanics, market trends, advisor adoption, regulatory frame.</p></div>
+        <div class="expertise-item"><h4>Concentrated Stock Solutions</h4><p>Founder liquidity, executive comp planning, tax-event avoidance.</p></div>
+        <div class="expertise-item"><h4>Digital Asset-Backed Lending</h4><p>BTC/ETH as collateral, institutional platforms, GENIUS/CLARITY Act.</p></div>
+        <div class="expertise-item"><h4>Family Office Liquidity</h4><p>Allocation models, custodian selection, multi-generational planning.</p></div>
+        <div class="expertise-item"><h4>SBL vs Margin Loans</h4><p>Regulation T, non-purpose lending, advisor decision frameworks.</p></div>
+        <div class="expertise-item"><h4>Trust Structure Lending</h4><p>GRATs, ILITs, dynasty trusts as borrowers.</p></div>
+      </div>
+    </div>
+
+    <div class="press-section" style="border-bottom: 0;">
+      <div class="press-contact">
+        <h3>Contact</h3>
+        <div class="press-contact-row"><div class="press-contact-label">Press inquiries</div><div class="press-contact-value"><a href="mailto:press@sydneywestrick.com">press@sydneywestrick.com</a></div></div>
+        <div class="press-contact-row"><div class="press-contact-label">Source requests</div><div class="press-contact-value"><a href="mailto:source@sydneywestrick.com">source@sydneywestrick.com</a></div></div>
+        <div class="press-contact-row"><div class="press-contact-label">Speaking</div><div class="press-contact-value"><a href="mailto:speaking@sydneywestrick.com">speaking@sydneywestrick.com</a></div></div>
+        <div class="press-contact-row"><div class="press-contact-label">Response time</div><div class="press-contact-value">Quote in 2 hours · Feature in 24</div></div>
+        <div class="press-contact-row"><div class="press-contact-label">Time zone</div><div class="press-contact-value">CT (Madison, WI)</div></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

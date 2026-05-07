@@ -1,0 +1,19 @@
+---
+export interface Props {
+  activeNav: 'home' | 'pillars' | 'reports' | 'about' | 'press' | 'newsletter';
+}
+const { activeNav } = Astro.props;
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand">Sydney Westrick<span class="brand-pub">· The Liquidity Desk</span></a>
+    <nav class="site-nav"
+      ><a href="/" class={activeNav === 'home' ? 'active' : ''}>Home</a
+      ><a href="/pillars" class={activeNav === 'pillars' ? 'active' : ''}>Pillars</a
+      ><a href="/reports" class={activeNav === 'reports' ? 'active' : ''}>Reports</a
+      ><a href="/about" class={activeNav === 'about' ? 'active' : ''}>About</a
+      ><a href="/press" class={activeNav === 'press' ? 'active' : ''}>Press</a
+      ><a href="/liquidity-desk" class={activeNav === 'newsletter' ? 'active' : ''}>Newsletter</a
+    ></nav>
+  </div>
+</header>
